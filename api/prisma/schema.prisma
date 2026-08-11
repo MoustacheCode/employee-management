@@ -23,3 +23,16 @@ enum Engagement {
   full_time
   part_time
 }
+
+model Employee {
+  id Int @id @default(autoincrement())
+  firstName String
+  middleName String?
+  lastName String
+  email String @unique
+  mobile String
+  address String
+  dateOfBirth DateTime
+
+  contracts Contract[]
+}
