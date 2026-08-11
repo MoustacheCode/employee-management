@@ -11,3 +11,15 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+// Utilising Enums for Contract type and Engagement type
+
+enum ContractType {
+  permanent
+  contract
+}
+
+enum Engagement {
+  full_time
+  part_time
+}
