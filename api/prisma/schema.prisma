@@ -42,7 +42,7 @@ model Contract {
   contractType ContractType
   startDate DateTime
   endDate DateTime?
-  engagement StatusType
+  engagement Engagement
   hoursPerWeek Int
 
   employee Employee @relation(fields: [employeeId], references: [id])
