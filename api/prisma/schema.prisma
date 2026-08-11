@@ -36,3 +36,15 @@ model Employee {
 
   contracts Contract[]
 }
+
+model Contract {
+  id Int @id @default(autoincrement())
+  contractType ContractType
+  startDate DateTime
+  endDate DateTime?
+  engagement StatusType
+  hoursPerWeek Int
+
+  employee Employee @relation(fields: [employeeId], references: [id])
+  employeeId Int
+}
