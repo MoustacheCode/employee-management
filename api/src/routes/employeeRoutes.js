@@ -1,40 +1,49 @@
-import { createEmployee, getAllEmployees, getEmployeeById, updateEmployee, deleteEmployee } from "../controllers/employeeController.js";
-import { createEmployeeValidator, updateEmployeeValidator } from "../validators/employeeValidator.js";
+import {
+    createEmployee,
+    getAllEmployees,
+    getEmployeeById,
+    updateEmployee,
+    deleteEmployee,
+} from "../controllers/employeeController.js";
+import {
+    createEmployeeValidator,
+    updateEmployeeValidator,
+} from "../validators/employeeValidator.js";
 
 export default [
     {
-        method "POST",
+        method: "POST",
         path: "/employees",
         options: {
             validate: {
-                payload: createEmployeeValidator
-            }
+                payload: createEmployeeValidator,
+            },
         },
-        handler: createEmployee
+        handler: createEmployee,
     },
     {
         method: "GET",
         path: "/employees",
-        handler: getEmployees
+        handler: getEmployees,
     },
     {
         method: "GET",
         path: "/employees/{id}",
-        handler: getEmployeeById
+        handler: getEmployeeById,
     },
     {
         method: "PUT",
         path: "/employees/{id}",
         options: {
             validate: {
-                payload: updateEmployeeValidator
-            }
+                payload: updateEmployeeValidator,
+            },
         },
-        handler: updateEmployee
+        handler: updateEmployee,
     },
     {
         method: "DELETE",
         path: "/employees/{id}",
-        handler: deleteEmployee
-    }
+        handler: deleteEmployee,
+    },
 ];
